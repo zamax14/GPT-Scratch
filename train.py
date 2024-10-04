@@ -10,7 +10,7 @@ GPT_CONFIG_124M = {
     "emb_dim": 768,        # Embedding dimension
     "n_heads": 24,         # Number of attention heads
     "n_layers": 24,        # Number of layers
-    "drop_rate": 0.1,      # Dropout rate
+    "drop_rate": 0.0,      # Dropout rate
     "qkv_bias": False      # Query-key-value bias
 }
 
@@ -51,7 +51,7 @@ for epoch in range(num_epochs):
         if batch_idx % 10 == 0:
             train_loss, val_loss = evaluate_model(
                 model, train_dataloader, val_dataloader, device, 5)
-            print(f"Ep {epoch+1} (Step {batch_idx:06d}): "
+            print(f"Ep {epoch+1}: "
                     f"Train loss {train_loss:.3f}, Val loss {val_loss:.3f}")
 print('Finish!')
 
